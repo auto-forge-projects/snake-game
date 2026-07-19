@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 14,
+  "revision": 16,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 5,
+  "current_phase": 6,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -66,6 +66,20 @@
       "gate_passed": true,
       "completed_at": "2026-07-19T13:16:50.614Z"
     },
+    "6": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "note": "UI/UX (orchestrator inline, developer rolü): tek ekran, Canvas+aria-live, uçtan uca akış. Kapı geçti (structural).",
+      "artifacts": [
+        "docs/06-uiux/06-uiux.md"
+      ],
+      "decisions": [
+        "DL-06-001"
+      ],
+      "started_at": "2026-07-19T13:17:55.111Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:17:55.111Z"
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -103,7 +117,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:16:50.642Z",
+  "updated_at": "2026-07-19T13:17:55.138Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -125,6 +139,11 @@
       "phase": 4,
       "at": "2026-07-19T13:13:51.802Z",
       "note": "Seçim: HTML5 Canvas+requestAnimationFrame render, minimal Express+express.static servis, ince localStorage wrapper (try/catch+integer doğrulama). Faz 5 mimarisi bu üçünü bileşenlere açar."
+    },
+    {
+      "phase": 5,
+      "at": "2026-07-19T13:16:52.401Z",
+      "note": "Mimari: server.js (Express static+/health) + public/{index.html,styles.css,game.js,storage.js}. Fixed-step (stepMs<=100) oyun mantığı + rAF render ayrımı; 20x20 ızgara varsayılan; aria-live skor/oyun-sonu duyurusu."
     }
   ]
 }
