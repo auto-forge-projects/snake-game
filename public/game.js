@@ -41,20 +41,33 @@ function start(state) {
 }
 
 /**
- * TASK-002: fixed-step mantık adımı. status !== 'running' iken no-op (idle/gameover'da
- * yılan hareket etmez). Yem/çarpışma mantığı sonraki task'larda eklenir.
+ * FR-2: klavye yön isteğini değerlendirir. 180° (tam ters) istek YOK SAYILIR (yılan kendi
+ * üzerine anında çarpışmaz); aksi halde istenen yön kabul edilir. `next` tamponuna yazılır,
+ * step() bir sonraki adımda uygular (NFR-1: giriş → yön değişimi ≤100ms).
+ * @param {{x:number,y:number}} currentDir aktif yön
+ * @param {{x:number,y:number}} requestedDir istenen yön
+ */
+function turn(currentDir, requestedDir) {
+  const isOpposite = requestedDir.x === -currentDir.x && requestedDir.y === -currentDir.y;
+  return isOpposite ? currentDir : requestedDir;
+}
+
+/**
+ * TASK-002/003: fixed-step mantık adımı. status !== 'running' iken no-op (idle/gameover'da
+ * yılan hareket etmez). Adım başında kuyruklanmış `next` yönü `dir`'e uygulanır. Yem/çarpışma
+ * mantığı sonraki task'larda eklenir.
  */
 function step(state) {
   if (state.status !== 'running') return state;
-  const dir = state.dir;
+  const dir = state.next;
   const head = state.snake[0];
   const newHead = { x: head.x + dir.x, y: head.y + dir.y };
   const newSnake = [newHead, ...state.snake.slice(0, -1)];
-  return { ...state, snake: newSnake };
+  return { ...state, dir, next: dir, snake: newSnake };
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { GRID, STEP_MS, createInitialState, start, step };
+  module.exports = { GRID, STEP_MS, createInitialState, start, turn, step };
 }
 
 if (typeof document !== 'undefined') {
