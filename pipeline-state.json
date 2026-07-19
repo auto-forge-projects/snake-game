@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 6,
+  "revision": 8,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": "1-2",
+  "current_phase": 3,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -23,6 +23,20 @@
       "started_at": "2026-07-19T13:02:17.011Z",
       "gate_passed": true,
       "completed_at": "2026-07-19T13:10:00.000Z"
+    },
+    "3": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "note": "Requirement Analizi (orchestrator inline, business-analyst rolü): 7 FR + 8 NFR, 2 açık soru varsayımla kapatıldı. Kapı geçti (structural).",
+      "artifacts": [
+        "docs/03-requirements.md"
+      ],
+      "decisions": [
+        "DL-03-001"
+      ],
+      "started_at": "2026-07-19T13:10:19.921Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:10:19.921Z"
     },
     "1-2": {
       "mode": "AUTOPILOT",
@@ -61,13 +75,18 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:09:02.802Z",
+  "updated_at": "2026-07-19T13:10:19.947Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
       "phase": 0,
       "at": "2026-07-19T13:07:54.481Z",
       "note": "Snake oyunu: web/istemci-taraflı, ok tuşu kontrol, localStorage high-score. Açık sorular (mobil dokunmatik, görsel stil) sonraki fazlara bırakıldı."
+    },
+    {
+      "phase": "1-2",
+      "at": "2026-07-19T13:09:04.558Z",
+      "note": "GO kararı; 4 KPI (giriş gecikmesi≤100ms, ~60FPS, localStorage skor kalıcılığı, ≤150KB yük). Açık sorular (mobil kontrol, görsel stil) Faz 3/6a bırakıldı."
     }
   ]
 }
