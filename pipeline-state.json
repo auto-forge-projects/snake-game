@@ -1,20 +1,41 @@
 {
   "schema_version": 2,
-  "revision": 0,
+  "revision": 1,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": null,
+  "current_phase": 0,
   "status": "pending",
   "active_agents": [],
-  "phases": {},
+  "phases": {
+    "0": {
+      "mode": "AUTOPILOT",
+      "status": "awaiting_approval",
+      "note": "0b rafine brief onayı bekleniyor",
+      "artifacts": [
+        "docs/00-refined-brief.md"
+      ],
+      "decisions": []
+    }
+  },
   "feedback_loops": [],
   "pending_human_review": [],
-  "history": [],
+  "history": [
+    {
+      "event": "refine",
+      "phase": "0b",
+      "detail": "Ham fikirden (\"bir yılan oyunu yap\") rafine brief üretildi (Sonnet, hızlı model)"
+    },
+    {
+      "event": "project_materialized",
+      "detail": "Taslak gerçek projeye dönüştürüldü: repo auto-forge-projects/snake-game, workspace/snake-game"
+    }
+  ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": null
+  "updated_at": "2026-07-19T13:06:58.382Z",
+  "default_mode": "AUTOPILOT"
 }
