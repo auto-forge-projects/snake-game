@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 85,
+  "revision": 86,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
@@ -385,7 +385,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T20:48:33.001Z",
+  "updated_at": "2026-07-19T21:26:15.357Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {

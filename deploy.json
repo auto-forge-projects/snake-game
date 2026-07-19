@@ -1,6 +1,6 @@
 {
   "_comment": "Per-repo proje deploy config. enabled:true yapınca ve push'layınca imaj GHCR'a gider, ajan deploy eder. Düz sır yok; secret_names sır ADLARINI işaret eder (değerleri GitHub Secrets'ta).",
-  "enabled": false,
+  "enabled": true,
   "repo_mode": "per-repo",
   "registry": "ghcr.io/auto-forge-projects",
   "server": "main",
@@ -8,7 +8,7 @@
   "subdomain": "{project}",
   "proxy": "nginx",
   "port": 3000,
-  "host_port": null,
+  "host_port": 5001,
   "env_ref": "github-secrets",
   "secret_names": {
     "host": "DEPLOY_HOST",
