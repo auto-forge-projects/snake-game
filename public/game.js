@@ -112,6 +112,15 @@ function step(state) {
   return { ...state, dir, next: dir, snake: newSnake, score, food };
 }
 
+/**
+ * FR-6: "Tekrar Oyna" — yılanı/skoru başlangıç durumuna sıfırlar ve oyunu HEMEN yeniden
+ * başlatır (bekletmeden); en yüksek skor (`best`) korunur/taşınır.
+ * @param {number} [best] korunacak en yüksek skor.
+ */
+function resetState(best = 0) {
+  return start(createInitialState(best));
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     GRID,
@@ -123,6 +132,7 @@ if (typeof module !== 'undefined' && module.exports) {
     isOutOfBounds,
     isSelfCollision,
     step,
+    resetState,
   };
 }
 
