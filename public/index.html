@@ -2,9 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Snake</title>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <h1>Snake</h1>
+  <main>
+    <h1>Snake</h1>
+    <div class="hud">
+      <p>Skor: <span id="score" aria-live="polite">0</span></p>
+      <p>En yüksek: <span id="best" aria-live="polite">0</span></p>
+    </div>
+    <canvas id="board" width="400" height="400" role="img" aria-label="Snake oyun alanı"></canvas>
+    <p id="status" aria-live="assertive"></p>
+    <div class="controls">
+      <button id="start-btn" type="button">Başlat</button>
+      <button id="restart-btn" type="button" hidden>Tekrar Oyna</button>
+    </div>
+    <p class="hint">
+      Ok tuşlarıyla yönlendirin. Başlamak için bir ok tuşuna basın veya "Başlat"a tıklayın/Enter'a basın.
+    </p>
+  </main>
+  <script src="/storage.js"></script>
+  <script src="/game.js"></script>
 </body>
 </html>
