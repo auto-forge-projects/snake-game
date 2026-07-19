@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 69,
+  "revision": 73,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 12,
+  "current_phase": 13,
   "status": "running",
   "active_agents": [],
   "phases": {
@@ -222,6 +222,20 @@
       ],
       "note": "CI/CD (orchestrator inline, devops-engineer rolü): Dockerfile (node:22-alpine, non-root, npm audit temiz), .dockerignore, ci.yml npm ci + docker-build job. Docker build+run doğrulandı (süreç seviyesinde). Kapı geçti (all). Risk: imaj 241MB, NFR-7 (≤150MB) bütçesini aşıyor -> Faz 15 teknik borç."
     },
+    "13": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T20:44:00.000Z",
+      "completed_at": "2026-07-19T20:46:00.000Z",
+      "gate_passed": true,
+      "artifacts": [
+        "docs/13-release-notes.md"
+      ],
+      "decisions": [
+        "DL-13-001"
+      ],
+      "note": "Release (orchestrator inline, devops-engineer rolü): v0.1.0 sürüm notları, rollback planı (stateless mimari). Kapı geçti (structural)."
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -329,7 +343,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T20:43:09.098Z",
+  "updated_at": "2026-07-19T20:44:32.410Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -381,6 +395,11 @@
       "phase": 11,
       "at": "2026-07-19T14:01:25.026Z",
       "note": "Faz 11 kapandı: 44/44 test yeşil (39 birim + 5 entegrasyon), coverage 99.14%. Playwright/gerçek-tarayıcı E2E ve NFR-2 (FPS) bilinçli kapsam dışı (DL-11-001) — Faz 15 borcuna not düşüldü."
+    },
+    {
+      "phase": 12,
+      "at": "2026-07-19T20:43:22.002Z",
+      "note": "Faz 12 kapandı: Dockerfile (node:22-alpine, non-root), ci.yml docker-build job, imaj 241MB (NFR-7 150MB bütçesini aşıyor -> Faz 15 borcu). state.product dolduruldu."
     }
   ],
   "product": {
