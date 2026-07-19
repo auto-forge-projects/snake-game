@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 16,
+  "revision": 19,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 6,
+  "current_phase": 7,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -80,6 +80,20 @@
       "gate_passed": true,
       "completed_at": "2026-07-19T13:17:55.111Z"
     },
+    "7": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T13:18:10.571Z",
+      "note": "Güvenlik (security-reviewer devri, opus): OWASP 10/10, STRIDE, AI tedarik zinciri tehditleri, SEC-1..8 Faz 9a devredildi. Blocker yok. Kapı geçti (structural).",
+      "artifacts": [
+        "docs/07-security.md"
+      ],
+      "decisions": [
+        "DL-07-001"
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:23:14.644Z"
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -117,7 +131,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:17:55.138Z",
+  "updated_at": "2026-07-19T13:23:14.676Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -144,6 +158,11 @@
       "phase": 5,
       "at": "2026-07-19T13:16:52.401Z",
       "note": "Mimari: server.js (Express static+/health) + public/{index.html,styles.css,game.js,storage.js}. Fixed-step (stepMs<=100) oyun mantığı + rAF render ayrımı; 20x20 ızgara varsayılan; aria-live skor/oyun-sonu duyurusu."
+    },
+    {
+      "phase": 6,
+      "at": "2026-07-19T13:18:01.410Z",
+      "note": "Tek ekran: Canvas ızgara + skor(aria-live polite) + oyun-sonu(aria-live assertive) + Başlat/Tekrar Oyna. Yalnız klavye, düz-renk minimal stil."
     }
   ]
 }
