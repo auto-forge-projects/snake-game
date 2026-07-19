@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 86,
+  "revision": 87,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
@@ -385,7 +385,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T21:26:15.357Z",
+  "updated_at": "2026-07-19T21:27:11.054Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -484,5 +484,12 @@
         "path": "docs/11-test/results.md"
       }
     ]
+  },
+  "deploy": {
+    "status": "deploying",
+    "url": "https://snake-game.apps.sametemek.com",
+    "server": "main",
+    "triggered_at": "2026-07-19T21:27:01Z",
+    "run": "deploy-image.yml"
   }
 }
