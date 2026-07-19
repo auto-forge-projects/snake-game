@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "revision": 81,
+  "revision": 85,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 15,
-  "status": "running",
+  "current_phase": 16,
+  "status": "done",
   "active_agents": [],
   "phases": {
     "0": {
@@ -264,6 +264,20 @@
       ],
       "note": "Bakım (orchestrator inline, business-analyst rolü): 12 teknik borç kalemi önceliklendirildi (1×P1 flaky test, 3×P2, 8×P3). Kapı geçti (structural)."
     },
+    "16": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T20:52:00.000Z",
+      "completed_at": "2026-07-19T20:53:00.000Z",
+      "gate_passed": true,
+      "artifacts": [
+        "docs/16-retro.md"
+      ],
+      "decisions": [
+        "DL-16-001"
+      ],
+      "note": "Retrospektif (orchestrator inline): AF-047 (Faz 12 kapanış kesintisi) somut öneriye dönüştürüldü — doctor UNCOMMITTED_WORK bulgu türü. Kapı geçti (structural). Pipeline TAMAMLANDI (17/17 faz)."
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -371,7 +385,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T20:46:46.159Z",
+  "updated_at": "2026-07-19T20:48:33.001Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -438,6 +452,11 @@
       "phase": 14,
       "at": "2026-07-19T20:45:44.315Z",
       "note": "İzleme: /health endpoint + sunucu-taraflı console.error logu kritik akış (erişilebilirlik) için yeterli kabul edildi. Ayrı metrik/alert altyapısı yok (deploy henüz enabled:false)."
+    },
+    {
+      "phase": 15,
+      "at": "2026-07-19T20:46:52.367Z",
+      "note": "12 teknik borç kalemi kaydedildi; TD-1 (flaky test) P1, CI güvenilirliğini etkiliyor — bir sonraki geliştirme oturumunda ele alınmalı."
     }
   ],
   "product": {
