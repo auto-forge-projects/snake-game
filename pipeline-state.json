@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 73,
+  "revision": 77,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 13,
+  "current_phase": 14,
   "status": "running",
   "active_agents": [],
   "phases": {
@@ -236,6 +236,20 @@
       ],
       "note": "Release (orchestrator inline, devops-engineer rolü): v0.1.0 sürüm notları, rollback planı (stateless mimari). Kapı geçti (structural)."
     },
+    "14": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T20:46:30.000Z",
+      "completed_at": "2026-07-19T20:48:00.000Z",
+      "gate_passed": true,
+      "artifacts": [
+        "docs/14-monitoring.md"
+      ],
+      "decisions": [
+        "DL-14-001"
+      ],
+      "note": "Monitoring (orchestrator inline, devops-engineer rolü): health check + sunucu-taraflı hata logu, LITE ölçekte yeterli. Kapı geçti (structural)."
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -343,7 +357,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T20:44:32.410Z",
+  "updated_at": "2026-07-19T20:45:35.779Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -400,6 +414,11 @@
       "phase": 12,
       "at": "2026-07-19T20:43:22.002Z",
       "note": "Faz 12 kapandı: Dockerfile (node:22-alpine, non-root), ci.yml docker-build job, imaj 241MB (NFR-7 150MB bütçesini aşıyor -> Faz 15 borcu). state.product dolduruldu."
+    },
+    {
+      "phase": 13,
+      "at": "2026-07-19T20:44:40.271Z",
+      "note": "v0.1.0 yayınlandı (M1). Rollback: stateless mimari, veri kaybı riski yok. deploy.json.enabled:false — otomatik dağıtım bu sürümde yok."
     }
   ],
   "product": {
