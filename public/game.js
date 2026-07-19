@@ -74,11 +74,23 @@ function spawnFood(snake, grid, rng = Math.random) {
   return candidate;
 }
 
+/** FR-4: baş ızgara sınırı dışına çıktı mı? */
+function isOutOfBounds(pos, grid) {
+  return pos.x < 0 || pos.x >= grid.cols || pos.y < 0 || pos.y >= grid.rows;
+}
+
+/** FR-4: baş, verilen gövde hücrelerinden biriyle çakışıyor mu? */
+function isSelfCollision(head, bodyCells) {
+  return occupiesCell(bodyCells, head);
+}
+
 /**
- * TASK-002/003/004: fixed-step mantık adımı. status !== 'running' iken no-op. Adım başında
- * kuyruklanmış `next` yönü `dir`'e uygulanır. Yılanın başı yem hücresine girerse (FR-3) bir
- * birim uzar, skor 1 artar ve yeni yem gövde dışında yeniden üretilir; aksi halde kuyruk düşer
- * (uzunluk sabit kalır). Çarpışma tespiti TASK-005'te eklenir.
+ * TASK-002..005: fixed-step mantık adımı. status !== 'running' iken no-op (idle/gameover'da
+ * yılan hareket etmez — FR-4 AC: oyun bitince döngü durur). Adım başında kuyruklanmış `next`
+ * yönü `dir`'e uygulanır. Baş duvara/kendi gövdesine çarparsa (FR-4) status='gameover' olur ve
+ * final skor korunur (yılan/skor bir daha değişmez). Aksi halde yılanın başı yem hücresine
+ * girerse (FR-3) bir birim uzar, skor 1 artar, yeni yem gövde dışında üretilir; aksi halde
+ * kuyruk düşer (uzunluk sabit kalır).
  */
 function step(state) {
   if (state.status !== 'running') return state;
@@ -86,6 +98,13 @@ function step(state) {
   const head = state.snake[0];
   const newHead = { x: head.x + dir.x, y: head.y + dir.y };
   const ate = newHead.x === state.food.x && newHead.y === state.food.y;
+  // Kendine-çarpışma kontrolü, bu adımda vücutta KALACAK hücrelere göre yapılır: yem
+  // yenmiyorsa kuyruk aynı adımda ayrılır (klasik Snake kuralı — kuyruğun boşalttığı hücreye
+  // girmek çarpışma sayılmaz), yem yeniyorsa kuyruk yerinde kalır.
+  const bodyAfterMove = ate ? state.snake : state.snake.slice(0, -1);
+  if (isOutOfBounds(newHead, state.grid) || isSelfCollision(newHead, bodyAfterMove)) {
+    return { ...state, status: 'gameover' };
+  }
   const grown = [newHead, ...state.snake];
   const newSnake = ate ? grown : grown.slice(0, -1);
   const score = ate ? state.score + 1 : state.score;
@@ -94,7 +113,17 @@ function step(state) {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { GRID, STEP_MS, createInitialState, start, turn, spawnFood, step };
+  module.exports = {
+    GRID,
+    STEP_MS,
+    createInitialState,
+    start,
+    turn,
+    spawnFood,
+    isOutOfBounds,
+    isSelfCollision,
+    step,
+  };
 }
 
 if (typeof document !== 'undefined') {
