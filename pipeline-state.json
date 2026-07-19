@@ -1,13 +1,31 @@
 {
   "schema_version": 2,
-  "revision": 33,
+  "revision": 37,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 9,
-  "status": "pending",
-  "active_agents": [],
+  "current_phase": 10,
+  "status": "running",
+  "active_agents": [
+    {
+      "agent": "code-reviewer",
+      "model": "opus",
+      "phase": 10,
+      "task": "Blind PR review — Faz 9 diff",
+      "started_at": "2026-07-19T13:58:35.000Z",
+      "last_update": "2026-07-19T13:58:35.000Z"
+    },
+    {
+      "agent": "test-engineer",
+      "model": "sonnet",
+      "phase": 11,
+      "task": "Test planı + entegrasyon/E2E kapsam raporu",
+      "started_at": "2026-07-19T13:58:35.000Z",
+      "last_update": "2026-07-19T13:58:35.000Z",
+      "via": "inline"
+    }
+  ],
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
@@ -157,6 +175,14 @@
         "DL-09-001"
       ]
     },
+    "10": {
+      "status": "running",
+      "started_at": "2026-07-19T13:58:35.000Z"
+    },
+    "11": {
+      "status": "running",
+      "started_at": "2026-07-19T13:58:35.000Z"
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -193,13 +219,23 @@
       "event": "recovered",
       "phase": 9,
       "detail": "ORPHANED_RUN kurtarıldı: TASK-009 iş listesinden devam edildi (bootstrap testleri + coverage doğrulandı), Faz 9 kapandı (mechanical all, DL-09-001)"
+    },
+    {
+      "event": "phase_started",
+      "phase": 10,
+      "detail": "Code Review (code-reviewer devri, opus, blind, async — LITE FAST): Faz 11 ile paralel"
+    },
+    {
+      "event": "phase_started",
+      "phase": 11,
+      "detail": "Test (orchestrator inline, test-engineer rolü): Faz 10 ile paralel"
     }
   ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:57:31.492Z",
+  "updated_at": "2026-07-19T13:58:36.073Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
