@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "revision": 1,
+  "revision": 3,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
@@ -11,12 +11,18 @@
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
-      "status": "awaiting_approval",
-      "note": "0b rafine brief onayı bekleniyor",
+      "status": "done",
+      "note": "Faz 0 (Fikir/Intake) üretildi (orchestrator inline, business-analyst rolü) — kullanıcı onaylı brief girdi alındı",
       "artifacts": [
-        "docs/00-refined-brief.md"
+        "docs/00-refined-brief.md",
+        "docs/00-idea.md"
       ],
-      "decisions": []
+      "decisions": [
+        "DL-00-001"
+      ],
+      "started_at": "2026-07-19T13:02:17.011Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:10:00.000Z"
     }
   },
   "feedback_loops": [],
@@ -30,12 +36,17 @@
     {
       "event": "project_materialized",
       "detail": "Taslak gerçek projeye dönüştürüldü: repo auto-forge-projects/snake-game, workspace/snake-game"
+    },
+    {
+      "event": "phase_completed",
+      "phase": 0,
+      "detail": "docs/00-idea.md üretildi (orchestrator inline, business-analyst rolü); kapı geçti (structural)"
     }
   ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:06:58.382Z",
+  "updated_at": "2026-07-19T13:07:47.761Z",
   "default_mode": "AUTOPILOT"
 }
