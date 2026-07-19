@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 8,
+  "revision": 11,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 3,
+  "current_phase": 4,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -37,6 +37,20 @@
       "started_at": "2026-07-19T13:10:19.921Z",
       "gate_passed": true,
       "completed_at": "2026-07-19T13:10:19.921Z"
+    },
+    "4": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T13:10:53.144Z",
+      "note": "Çözüm Analizi (architect devri, opus): 3 karar noktası/6 alternatif, trade-off matrisleri, kapı geçti (structural). Seçim: Canvas+rAF render, Express static servis, ince localStorage wrapper.",
+      "artifacts": [
+        "docs/04-solution-analysis.md"
+      ],
+      "decisions": [
+        "DL-04-001"
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:13:45.958Z"
     },
     "1-2": {
       "mode": "AUTOPILOT",
@@ -75,7 +89,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:10:19.947Z",
+  "updated_at": "2026-07-19T13:13:45.988Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -87,6 +101,11 @@
       "phase": "1-2",
       "at": "2026-07-19T13:09:04.558Z",
       "note": "GO kararı; 4 KPI (giriş gecikmesi≤100ms, ~60FPS, localStorage skor kalıcılığı, ≤150KB yük). Açık sorular (mobil kontrol, görsel stil) Faz 3/6a bırakıldı."
+    },
+    {
+      "phase": 3,
+      "at": "2026-07-19T13:10:26.400Z",
+      "note": "7 FR + 8 NFR kapandı. Kritik: klavye-only kontrol (FR-2), localStorage highscore (FR-5), 60FPS/100ms giriş gecikmesi (NFR-1/2), ≤150MB imaj (NFR-7)."
     }
   ]
 }
