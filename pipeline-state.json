@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 77,
+  "revision": 81,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 14,
+  "current_phase": 15,
   "status": "running",
   "active_agents": [],
   "phases": {
@@ -250,6 +250,20 @@
       ],
       "note": "Monitoring (orchestrator inline, devops-engineer rolü): health check + sunucu-taraflı hata logu, LITE ölçekte yeterli. Kapı geçti (structural)."
     },
+    "15": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T20:49:00.000Z",
+      "completed_at": "2026-07-19T20:51:00.000Z",
+      "gate_passed": true,
+      "artifacts": [
+        "docs/15-maintenance.md"
+      ],
+      "decisions": [
+        "DL-15-001"
+      ],
+      "note": "Bakım (orchestrator inline, business-analyst rolü): 12 teknik borç kalemi önceliklendirildi (1×P1 flaky test, 3×P2, 8×P3). Kapı geçti (structural)."
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -357,7 +371,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T20:45:35.779Z",
+  "updated_at": "2026-07-19T20:46:46.159Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -419,6 +433,11 @@
       "phase": 13,
       "at": "2026-07-19T20:44:40.271Z",
       "note": "v0.1.0 yayınlandı (M1). Rollback: stateless mimari, veri kaybı riski yok. deploy.json.enabled:false — otomatik dağıtım bu sürümde yok."
+    },
+    {
+      "phase": 14,
+      "at": "2026-07-19T20:45:44.315Z",
+      "note": "İzleme: /health endpoint + sunucu-taraflı console.error logu kritik akış (erişilebilirlik) için yeterli kabul edildi. Ayrı metrik/alert altyapısı yok (deploy henüz enabled:false)."
     }
   ],
   "product": {
