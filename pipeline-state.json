@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 22,
+  "revision": 33,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 8,
+  "current_phase": 9,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -108,6 +108,55 @@
       "gate_passed": true,
       "completed_at": "2026-07-19T13:24:20.830Z"
     },
+    "9": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T13:24:56.138Z",
+      "tasks": [
+        {
+          "title": "TASK-001 server.js+health",
+          "status": "done"
+        },
+        {
+          "title": "TASK-002 canvas oyun döngüsü",
+          "status": "done"
+        },
+        {
+          "title": "TASK-003 klavye kontrolü",
+          "status": "done"
+        },
+        {
+          "title": "TASK-004 yem/büyüme/skor",
+          "status": "done"
+        },
+        {
+          "title": "TASK-005 çarpışma/oyun sonu",
+          "status": "done"
+        },
+        {
+          "title": "TASK-006 localStorage wrapper",
+          "status": "done"
+        },
+        {
+          "title": "TASK-007 yeniden başlatma",
+          "status": "done"
+        },
+        {
+          "title": "TASK-008 erişilebilirlik+güvenlik",
+          "status": "done"
+        },
+        {
+          "title": "TASK-009 test paketi+coverage",
+          "status": "done"
+        }
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:57:31.000Z",
+      "note": "Development (orchestrator inline, developer rolü, resume): TASK-001..009 TDD ile tamamlandı. npm test 39/39 yeşil, coverage 99.14%. Kapı geçti (mechanical, all).",
+      "decisions": [
+        "DL-09-001"
+      ]
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -139,13 +188,18 @@
       "event": "phase_completed",
       "phase": 0,
       "detail": "docs/00-idea.md üretildi (orchestrator inline, business-analyst rolü); kapı geçti (structural)"
+    },
+    {
+      "event": "recovered",
+      "phase": 9,
+      "detail": "ORPHANED_RUN kurtarıldı: TASK-009 iş listesinden devam edildi (bootstrap testleri + coverage doğrulandı), Faz 9 kapandı (mechanical all, DL-09-001)"
     }
   ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:24:20.862Z",
+  "updated_at": "2026-07-19T13:57:31.492Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -182,6 +236,16 @@
       "phase": 7,
       "at": "2026-07-19T13:23:16.372Z",
       "note": "Güvenlik: Blocker yok. SEC-1..8 Faz 9a devredildi (güvenlik başlıkları+CSP, kilitli express.static, storage sertleştirme, injection-free DOM, npm audit 0 critical/high, Dockerfile non-root, CI least-privilege)."
+    },
+    {
+      "phase": 8,
+      "at": "2026-07-19T13:24:22.585Z",
+      "note": "9 task planlandı (TASK-001..009), TASK-009 test paketi. Faz 9 bu sırayla TDD ile ilerleyecek: server->oyun döngüsü->klavye->yem/skor->çarpışma->storage->restart->guvenlik-sertleştirme->test."
+    },
+    {
+      "phase": 9,
+      "at": "2026-07-19T13:57:31.492Z",
+      "note": "Faz 9 kapandı: Express+Canvas+localStorage istemcisi, 39 test/99.14% coverage, SEC-1..8 TASK-008de gömülü. Faz 10 blind review için src/tests hazır."
     }
   ]
 }
