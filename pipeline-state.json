@@ -1,31 +1,13 @@
 {
   "schema_version": 2,
-  "revision": 37,
+  "revision": 51,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 10,
+  "current_phase": 12,
   "status": "running",
-  "active_agents": [
-    {
-      "agent": "code-reviewer",
-      "model": "opus",
-      "phase": 10,
-      "task": "Blind PR review — Faz 9 diff",
-      "started_at": "2026-07-19T13:58:35.000Z",
-      "last_update": "2026-07-19T13:58:35.000Z"
-    },
-    {
-      "agent": "test-engineer",
-      "model": "sonnet",
-      "phase": 11,
-      "task": "Test planı + entegrasyon/E2E kapsam raporu",
-      "started_at": "2026-07-19T13:58:35.000Z",
-      "last_update": "2026-07-19T13:58:35.000Z",
-      "via": "inline"
-    }
-  ],
+  "active_agents": [],
   "phases": {
     "0": {
       "mode": "AUTOPILOT",
@@ -176,12 +158,27 @@
       ]
     },
     "10": {
-      "status": "running",
-      "started_at": "2026-07-19T13:58:35.000Z"
+      "status": "done",
+      "started_at": "2026-07-19T13:58:35.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-19T17:17:52.000Z",
+      "artifacts": [
+        "docs/10-review/PR-1.md"
+      ],
+      "decisions": [
+        "DL-10-001"
+      ],
+      "note": "Code Review (code-reviewer devri, opus, blind, async — LITE FAST, resume/ORPHANED_RUN kurtarıldı): Blocker/Critical=0, Major 1 (F1 flaky test — Faz 15 borcuna not düşüldü, LITE eşiği {critical,1} zorlamıyor), Minor 1, Nit 6. Kapı geçti (all)."
     },
     "11": {
-      "status": "running",
-      "started_at": "2026-07-19T13:58:35.000Z"
+      "status": "done",
+      "started_at": "2026-07-19T13:58:35.000Z",
+      "gate_passed": true,
+      "completed_at": "2026-07-19T14:01:24.000Z",
+      "note": "Test (orchestrator inline, test-engineer rolü): 5 entegrasyon testi eklendi (HTML↔JS id eşleşmesi, statik varlık servisi). 44/44 test yeşil, coverage 99.14%. Kapı geçti (mechanical).",
+      "decisions": [
+        "DL-11-001"
+      ]
     },
     "1-2": {
       "mode": "AUTOPILOT",
@@ -229,13 +226,43 @@
       "event": "phase_started",
       "phase": 11,
       "detail": "Test (orchestrator inline, test-engineer rolü): Faz 10 ile paralel"
+    },
+    {
+      "event": "recovered",
+      "phase": 10,
+      "detail": "ORPHANED_RUN kurtarildi: docs/10-review/PR-1.md diskte tam bulundu (blind review tamamlanmis ama commit/DL/state kapanisi kesilmisti), DL-10-001 yazildi, kapi dogrulandi (all, Blocker/Critical=0), Faz 10 done. Faz 11 de state te done ama commit edilmemis bulundu - ayni kosumda catch-up commit ile birlestirildi."
+    },
+    {
+      "at": "2026-07-19T18:57:54.818Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: yalnız default_mode)"
+    },
+    {
+      "at": "2026-07-19T19:02:48.016Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: yalnız default_mode)"
+    },
+    {
+      "at": "2026-07-19T19:07:49.223Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: yalnız default_mode)"
+    },
+    {
+      "at": "2026-07-19T19:12:10.017Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: yalnız default_mode)"
+    },
+    {
+      "at": "2026-07-19T19:22:10.354Z",
+      "event": "mode_changed",
+      "detail": "AUTOPILOT (aktif+sonrası; fazlar: yalnız default_mode)"
     }
   ],
   "budget": {
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:58:36.073Z",
+  "updated_at": "2026-07-19T19:22:10.384Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -282,6 +309,11 @@
       "phase": 9,
       "at": "2026-07-19T13:57:31.492Z",
       "note": "Faz 9 kapandı: Express+Canvas+localStorage istemcisi, 39 test/99.14% coverage, SEC-1..8 TASK-008de gömülü. Faz 10 blind review için src/tests hazır."
+    },
+    {
+      "phase": 11,
+      "at": "2026-07-19T14:01:25.026Z",
+      "note": "Faz 11 kapandı: 44/44 test yeşil (39 birim + 5 entegrasyon), coverage 99.14%. Playwright/gerçek-tarayıcı E2E ve NFR-2 (FPS) bilinçli kapsam dışı (DL-11-001) — Faz 15 borcuna not düşüldü."
     }
   ]
 }
