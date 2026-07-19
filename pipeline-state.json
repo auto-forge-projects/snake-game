@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 3,
+  "revision": 6,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 0,
+  "current_phase": "1-2",
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -23,6 +23,20 @@
       "started_at": "2026-07-19T13:02:17.011Z",
       "gate_passed": true,
       "completed_at": "2026-07-19T13:10:00.000Z"
+    },
+    "1-2": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T13:08:01.671Z",
+      "note": "Değer & Fizibilite (orchestrator inline, business-analyst rolü): 4 KPI, GO kararı. Kapı geçti (structural).",
+      "artifacts": [
+        "docs/01-02-value-feasibility.md"
+      ],
+      "decisions": [
+        "DL-01-001"
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:09:02.773Z"
     }
   },
   "feedback_loops": [],
@@ -47,6 +61,13 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:07:47.761Z",
-  "default_mode": "AUTOPILOT"
+  "updated_at": "2026-07-19T13:09:02.802Z",
+  "default_mode": "AUTOPILOT",
+  "checkpoints": [
+    {
+      "phase": 0,
+      "at": "2026-07-19T13:07:54.481Z",
+      "note": "Snake oyunu: web/istemci-taraflı, ok tuşu kontrol, localStorage high-score. Açık sorular (mobil dokunmatik, görsel stil) sonraki fazlara bırakıldı."
+    }
+  ]
 }
