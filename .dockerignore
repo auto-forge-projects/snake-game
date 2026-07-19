@@ -1,0 +1,14 @@
+.git
+.github
+.gitignore
+.DS_Store
+node_modules
+npm-debug.log
+docs
+decisions
+tests
+deploy
+pipeline-state.json
+.state.lock
+README.md
+*.md
