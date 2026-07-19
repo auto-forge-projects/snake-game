@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "revision": 19,
+  "revision": 22,
   "project": "snake-game",
   "workspace": "workspace/snake-game",
   "repo_mode": "per-repo",
   "profile": "LITE",
-  "current_phase": 7,
+  "current_phase": 8,
   "status": "pending",
   "active_agents": [],
   "phases": {
@@ -94,6 +94,20 @@
       "gate_passed": true,
       "completed_at": "2026-07-19T13:23:14.644Z"
     },
+    "8": {
+      "mode": "AUTOPILOT",
+      "status": "done",
+      "started_at": "2026-07-19T13:23:26.541Z",
+      "note": "Planlama (orchestrator inline, business-analyst rolü): M1, 9 task (≤0.5g), çevrimsiz graf. Kapı geçti (structural).",
+      "artifacts": [
+        "docs/08-plan.md"
+      ],
+      "decisions": [
+        "DL-08-001"
+      ],
+      "gate_passed": true,
+      "completed_at": "2026-07-19T13:24:20.830Z"
+    },
     "1-2": {
       "mode": "AUTOPILOT",
       "status": "done",
@@ -131,7 +145,7 @@
     "model_calls": {},
     "notes": ""
   },
-  "updated_at": "2026-07-19T13:23:14.676Z",
+  "updated_at": "2026-07-19T13:24:20.862Z",
   "default_mode": "AUTOPILOT",
   "checkpoints": [
     {
@@ -163,6 +177,11 @@
       "phase": 6,
       "at": "2026-07-19T13:18:01.410Z",
       "note": "Tek ekran: Canvas ızgara + skor(aria-live polite) + oyun-sonu(aria-live assertive) + Başlat/Tekrar Oyna. Yalnız klavye, düz-renk minimal stil."
+    },
+    {
+      "phase": 7,
+      "at": "2026-07-19T13:23:16.372Z",
+      "note": "Güvenlik: Blocker yok. SEC-1..8 Faz 9a devredildi (güvenlik başlıkları+CSP, kilitli express.static, storage sertleştirme, injection-free DOM, npm audit 0 critical/high, Dockerfile non-root, CI least-privilege)."
     }
   ]
 }
